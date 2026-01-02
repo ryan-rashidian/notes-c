@@ -2,18 +2,13 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "linkedl.h"
 
-struct node {
-    int value;
-    struct node *next;
-};
+struct node    *list_add(struct node *, int);
+struct node *list_remove(struct node *, int);
+struct node *list_search(struct node *, int);
 
-struct node *add_to_list(struct node *list, int value);
-struct node *delete_from_list(struct node *list, int value);
-struct node *search_list(struct node *list, int value);
-
-
-struct node *add_to_list(struct node *list, int value)
+struct node *list_add(struct node *list, int value)
 {
     struct node *new_node;
 
@@ -27,7 +22,7 @@ struct node *add_to_list(struct node *list, int value)
     return new_node;
 }
 
-struct node *delete_from_list(struct node *list, int value)
+struct node *list_remove(struct node *list, int value)
 {
     struct node *cur, *prev;
 
@@ -46,7 +41,7 @@ struct node *delete_from_list(struct node *list, int value)
     return list;
 }
 
-struct node *search_list(struct node *list, int value)
+struct node *list_search(struct node *list, int value)
 {
     for (; list != NULL && list->value != value; list = list->next)
         ;
