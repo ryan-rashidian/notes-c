@@ -23,7 +23,7 @@ int dynarr_push(Dynarr *arr, int value)
 {
     if (arr->cap == arr->len) {
         size_t new_cap = arr->cap * 2;
-        int *tmp = realloc(arr, new_cap * sizeof(int));
+        int *tmp = realloc(arr->data, new_cap * sizeof(int));
         if (!tmp) return -1;
         arr->data = tmp;
         arr->cap = new_cap;
