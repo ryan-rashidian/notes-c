@@ -1,5 +1,4 @@
 #include <SDL3/SDL.h>
-#include <SDL3/SDL_main.h>
 #include <stdbool.h>
 #include <stdint.h>
 #include <math.h>
