@@ -3,11 +3,13 @@ CFLAGS = -Wall -Wextra -pedantic -g -O2
 SDL_CFLAGS = $(shell pkg-config --cflags sdl3)
 SDL_LIBS   = $(shell pkg-config --libs sdl3)
 
-all: main
+TARGET = demo
 
-main: main.c
-	$(CC) $(CFLAGS) $(SDL_CFLAGS) main.c -o main $(SDL_LIBS)
+all: $(TARGET)
+
+$(TARGET): demo.c
+	$(CC) $(CFLAGS) $(SDL_CFLAGS) demo.c -o $(TARGET) $(SDL_LIBS)
 
 clean:
-	rm -f main
+	rm -f $(TARGET)
 
