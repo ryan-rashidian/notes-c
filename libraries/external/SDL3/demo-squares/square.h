@@ -2,7 +2,6 @@
 #define SQUARE_H
 
 #include <SDL3/SDL.h>
-#include <SDL3/SDL_main.h>
 
 typedef struct {
     float x, y, z;
